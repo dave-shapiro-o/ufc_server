@@ -10,9 +10,6 @@ exports.getAllFighters = (req, res, next) => {
  });
 };
 exports.getFightersByName = (req, res, next) => {
-// if (!req.params.name) {
-//   return next(new AppError("Not found", 404));
-// }
  conn.query(
    "SELECT * FROM Fighters WHERE Name LIKE CONCAT('%', ?, '%');",
    [req.query.name],
